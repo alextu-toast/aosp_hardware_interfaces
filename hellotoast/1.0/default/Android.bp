@@ -1,0 +1,21 @@
+cc_binary {
+    name: "android.hardware.hellotoast@1.0-service",
+    defaults: ["hidl_defaults"],
+    relative_install_path: "hw",
+    // put it in vendor partition?
+    vendor: true,
+    init_rc: ["android.hardware.hellotoast@1.0-service.rc"],
+    srcs: [
+        "HelloToast.cpp",
+        "service.cpp"
+    ],
+    // liblog to support logging.
+    shared_libs: [
+        "liblog",
+        "libhidlbase",
+        "libhidltransport",
+        "libutils",
+        "libhardware",
+        "android.hardware.hellotoast@1.0",
+    ],
+}

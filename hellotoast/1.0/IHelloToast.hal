@@ -1,0 +1,8 @@
+package android.hardware.hellotoast@1.0;
+
+interface IHelloToast {
+    // HelloTest is user defined class, it is defined in types.hal
+    justTest(string name) generates (string result, HelloTest value);
+    justTest1(HelloTest name);
+};
+
